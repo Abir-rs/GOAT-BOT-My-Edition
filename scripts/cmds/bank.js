@@ -46,8 +46,8 @@ if (!bankData[user]) {
   const recipientUID = parseInt(args[2]);
 
     switch (command) {
-case "deposit",
-        "-d":
+case "deposit":
+case    "-d":
   if (isNaN(amount) || amount <= 0) {
     return message.reply("╔════ஜ۩۞۩ஜ═══╗\n\n[🏦 Bank 🏦]\n\n❏Please enter a valid amount to deposit 🔁•\n\n╚════ஜ۩۞۩ஜ═══╝");
   }
@@ -71,8 +71,8 @@ fs.writeFileSync(bankDataPath, JSON.stringify(bankData), "utf8");
 break;
 
 
-case "withdraw",
-        "-w":
+case "withdraw":
+ case     "-w":
   const balance = bankData[user].bank || 0;
 
   if (isNaN(amount) || amount <= 0) {
@@ -97,8 +97,8 @@ fs.writeFileSync(bankDataPath, JSON.stringify(bankData), "utf8");
   break;
 
 
-case "balance",
-        "bal":
+case "balance":
+case    "bal":
   const formattedBankBalance = parseFloat(bankBalance);
   if (!isNaN(formattedBankBalance)) {
     return message.reply(`╔════ஜ۩۞۩ஜ═══╗\n\n[🏦 Bank 🏦]\n\n❏Your bank balance is: $${formatNumberWithFullForm(formattedBankBalance)}\n\n╚════ஜ۩۞۩ஜ═══╝`);
@@ -109,8 +109,8 @@ case "balance",
 
 
 
-case "interest",
-        "i":
+case "interest":
+case "i":
   const interestRate = 0.001; // 0.1% daily interest rate
   const lastInterestClaimed = bankData[user].lastInterestClaimed || 0;
 
@@ -142,8 +142,8 @@ return message.reply(`╔════ஜ۩۞۩ஜ═══╗\n\n[🏦 Bank 🏦
 break;
 
 
-case "transfer",
-        "-t":
+case "transfer":
+case "-t":
   if (isNaN(amount) || amount <= 0) {
     return message.reply("╔════ஜ۩۞۩ஜ═══╗\n\n[🏦 Bank 🏦]\n\n❏Please enter a valid amount to transfer 🔁•\n\n╚════ஜ۩۞۩ஜ═══╝");
   }
@@ -176,7 +176,7 @@ fs.writeFileSync(bankDataPath, JSON.stringify(bankData), "utf8");
 break;
 
 
-case "richest":
+case "top":
   const bankDataCp = JSON.parse(fs.readFileSync('scripts/cmds/bankData.json', 'utf8'));
 
   const topUsers = Object.entries(bankDataCp)
@@ -195,6 +195,7 @@ break;
 
 
 case "loan":
+case "l":
   const maxLoanAmount = 1000; //increase of decrease this
   const userLoan = bankData[user].loan || 0;
   const loanPayed = bankData[user].loanPayed !== undefined ? bankData[user].loanPayed : true;
