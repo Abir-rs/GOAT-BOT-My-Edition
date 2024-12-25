@@ -24,7 +24,7 @@ module.exports = {
         if (mention.length == 0) return message.reply("Please mention someone");
         else {
             const one = event.senderID, two = mention[0];
-            bal(one, two).then(ptth => { message.reply({ body: "Fuck your ball😹", attachment: fs.createReadStream(ptth) }) })
+            bal(one, two).then(ptth => { message.reply({ body: "Ouch 😴", attachment: fs.createReadStream(ptth) }) })
         }
     }
 
