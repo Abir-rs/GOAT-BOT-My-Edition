@@ -38,14 +38,14 @@
     "100078140834638"
   ],
   "whiteListMode": {
-    "enable": false,
+    "enable": true,
     "whiteListIds": [
       "100078140834638"
     ],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
   "nickNameBot": "𝙔𝙤𝙪𝙧 𝙈𝙖𝙠𝙞𝙢𝙖",
-  "prefix": "!",
+  "prefix": ".",
   "BaYjidapi": "https://bayjid-hd.onrender.com",
   "api": "",
   "api2": "",
